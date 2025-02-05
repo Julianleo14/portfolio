@@ -1,0 +1,219 @@
+/*Projects Card*/
+.cardContainerWithDetails {
+    display: flex;
+    min-width: 350px;
+    max-width: 400px; /* Mínimo ancho */
+    max-height: 500px; /* Límite máximo de altura */
+    overflow: hidden; /* Habilita el scroll si el contenido excede */
+    box-shadow: 0px 0px 10px 2px #11222F;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.cardContentWithDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.listWithDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 0;
+
+
+}
+
+.listItemWithDetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    list-style-type: none;
+}
+
+.listItemWithDetailsTitle {
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border-bottom: 2px double #87E4E0;
+
+}
+
+.details {
+    padding-left: 25px;
+    font-size: 18px;
+    color: white;
+
+}
+
+
+/*Small Card*/
+.cardContainerSmall {
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px #11222F;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.cardContentSmall {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1;
+
+}
+
+.title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #87E4E0;
+}
+
+.list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+}
+
+.listItem {
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    gap: 10px;
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+.link::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+            0deg,
+            transparent,
+            transparent 30%,
+            rgba(0, 255, 255, 0.3)
+    );
+    transform: rotate(-45deg);
+    transition: all 0.8s ease;
+    opacity: 0;
+}
+
+.link:hover::before {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(100%);
+
+}
+.link:visited { text-decoration: none; color:white; }
+
+
+/*Large Card*/
+.cardContainerLarge {
+    display: flex;
+    min-width: 350px;
+    max-width: 650px; /* Máximo ancho cuando crezca horizontalmente */
+    max-height: 500px; /* Límite máximo de altura */
+    overflow: hidden; /* Habilita el scroll si el contenido excede */
+    box-shadow: 0px 0px 10px 2px #11222F;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.cardContentLarge {
+
+    flex-grow: 1;
+    gap: 10px;
+
+}
+
+.listLarge {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos hagan wrap */
+    gap: 10px; /* Espacio entre los elementos */
+    color: white;
+}
+
+.listLargeItem {
+
+    flex: 1 1 calc(50% - 10px); /* Ocupa el 50% del ancho con gap ajustado */
+    max-width: calc(30% - 10px); /* No puede crecer más allá del 50% */
+    box-sizing: border-box; /* Incluye padding y border en el ancho */
+    display: flex; /* Flex interno, útil si hay íconos o texto */
+    align-items: center; /* Alinea los íconos al centro */
+    padding: 10px;
+    border-radius: 8px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transiciones suaves */
+    gap: 15px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .cardContainerLarge {
+        width: 100%;
+        max-height: max-content;
+        max-width: 100%;
+    }
+
+    .cardContainerSmall {
+        max-height: max-content;
+        width: 100%;
+        max-width: 100%;
+
+    }
+
+    .cardContainerWithDetails {
+        max-height: max-content;
+
+        width: 100%;
+        min-width: auto;
+        max-width: 100%;
+
+    }
+
+    .cardContainerLarge {
+        max-height: max-content;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: auto;
+    }
+
+    .listLarge {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    .listLargeItem {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        gap: 15px;
+    }
+
+}
+

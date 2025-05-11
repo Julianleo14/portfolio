@@ -14,7 +14,7 @@
 .cardContentWithDetails {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 .listWithDetails {
@@ -30,23 +30,25 @@
 .listItemWithDetails {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     width: 100%;
     list-style-type: none;
 }
 
 .listItemWithDetailsTitle {
     display: flex;
-    gap: 10px;
-    font-size: 20px;
+    gap: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: white;
     border-bottom: 2px double #87E4E0;
-
+    position: relative;
 }
+
 
 .details {
     padding-left: 25px;
-    font-size: 18px;
+    font-size: 15px;
     color: white;
 
 }
@@ -101,7 +103,9 @@
     padding-left: 5px;
     font-weight: bold;
 }
-
+.link{
+    color: rgba(0, 255, 255, 0.3);
+}
 .link::before {
     content: '';
     position: absolute;
@@ -125,7 +129,9 @@
     transform: rotate(-45deg) translateY(100%);
 
 }
-.link:visited { text-decoration: none; color:white; }
+.link:visited { text-decoration: none; color: rgba(0, 255, 255, 0.3); }
+
+
 
 
 /*Large Card*/
@@ -216,4 +222,10 @@
     }
 
 }
+.span{
+    align-self: center;
+
+
+}
+
 

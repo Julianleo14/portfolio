@@ -239,7 +239,8 @@ export const projects = {
         {
             icon: <FaCar size={25}/>,
             info: "Car Rental",
-            details: "Material UI, ReactJS, MYSQL, JAVA, Spring Boot, Jest, responsive."
+            details: "Material UI, ReactJS, MYSQL, JAVA, Spring Boot, Jest, responsive.",
+            url: "https://frontend-integrador.onrender.com"
         },
     LAWYER_PLATFORM:
         {
@@ -247,6 +248,7 @@ export const projects = {
             info: "Lawyer platform",
             details: "Material UI, ReactJS, responsive, Husky."
         },
+
 
 }
 

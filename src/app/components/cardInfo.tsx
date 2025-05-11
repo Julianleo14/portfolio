@@ -11,6 +11,7 @@ interface CardProps {
             icon: ReactNode;
             info: string;
             details?: string;
+            url: string;
         };
     };
     cardType: string;
@@ -32,6 +33,7 @@ const CardInfo: React.FC<CardProps> = ({
                                            backgroundColor,
                                            content,
                                            cardType,
+
                                        }) => {
     const hasDetails = content && Object.values(content).some((item) => item.details);
 
@@ -48,18 +50,43 @@ const CardInfo: React.FC<CardProps> = ({
             >
                 <div className={cardStyles.cardContentWithDetails}>
                     <h2 className={cardStyles.title}>{title}</h2>
+
                     {content && (
                         <ul className={cardStyles.listWithDetails}>
                             {Object.entries(content).map(([key, item]) => (
-                                <li key={key} className={cardStyles.listItemWithDetails}>
+                                item.info == "Car Rental" ? (<li key={key} className={cardStyles.listItemWithDetails}>
                                     <section className={cardStyles.listItemWithDetailsTitle}>
-                                        <span>{item.icon}</span>
-                                        <p>{item.info}</p>
+                                        <div className={cardStyles.listItem}>
+                                            <span className={cardStyles.span}>{item.icon}</span>
+                                            {isValidUrl(item.url) ? (
+                                                <Link
+                                                    href={item.url}
+                                                    target="_blank"
+                                                    rel="oreferrer"
+                                                    className={cardStyles.link}
+                                                >
+                                                    {item.info} ↗
+                                                </Link>
+                                            ) : (
+                                                <p>{item.info}</p>
+                                            )}
+
+                                        </div>
                                     </section>
                                     <div className={cardStyles.details}>
                                         {item.details}
                                     </div>
-                                </li>
+                                </li>) : (
+                                    <li key={key} className={cardStyles.listItemWithDetails}>
+                                        <section className={cardStyles.listItemWithDetailsTitle}>
+                                            <span className={cardStyles.span}>{item.icon}</span>
+                                            <p>{item.info}</p>
+                                        </section>
+                                        <div className={cardStyles.details}>
+                                            {item.details}
+                                        </div>
+                                    </li>
+                                )
                             ))}
                         </ul>
                     )}

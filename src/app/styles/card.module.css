@@ -224,8 +224,9 @@
 }
 .span{
     align-self: center;
-
-
+}
+.text{
+    text-transform: capitalize;
 }
 
 

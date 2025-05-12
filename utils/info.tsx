@@ -28,7 +28,7 @@ import {BsPersonLinesFill} from "react-icons/bs";
 import {DiScrum} from "react-icons/di";
 
 export const contactInfo = {
-    tel: {
+    phone: {
         icon: <FaPhone size={25}/>,
         info: "+57 3192670195"
     },

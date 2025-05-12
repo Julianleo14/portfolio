@@ -11,21 +11,12 @@ interface CardProps {
             icon: ReactNode;
             info: string;
             details?: string;
-            url: string;
+            url?: string;
         };
     };
     cardType: string;
 }
 
-/* Valida si el link es válido */
-const isValidUrl = (url: string): boolean => {
-    try {
-        new URL(url);
-        return true;
-    } catch {
-        return false;
-    }
-};
 
 const CardInfo: React.FC<CardProps> = ({
                                            title,
@@ -36,6 +27,7 @@ const CardInfo: React.FC<CardProps> = ({
 
                                        }) => {
     const hasDetails = content && Object.values(content).some((item) => item.details);
+
 
     if (hasDetails) {
         return (
@@ -58,19 +50,14 @@ const CardInfo: React.FC<CardProps> = ({
                                     <section className={cardStyles.listItemWithDetailsTitle}>
                                         <div className={cardStyles.listItem}>
                                             <span className={cardStyles.span}>{item.icon}</span>
-                                            {isValidUrl(item.url) ? (
-                                                <Link
-                                                    href={item.url}
-                                                    target="_blank"
-                                                    rel="oreferrer"
-                                                    className={cardStyles.link}
-                                                >
-                                                    {item.info} ↗
-                                                </Link>
-                                            ) : (
-                                                <p>{item.info}</p>
-                                            )}
-
+                                            <Link
+                                                href={item.url ?? "https://google.com"}
+                                                target="_blank"
+                                                rel="oreferrer"
+                                                className={cardStyles.link}
+                                            >
+                                                {item.info} ↗
+                                            </Link>
                                         </div>
                                     </section>
                                     <div className={cardStyles.details}>
@@ -128,6 +115,7 @@ const CardInfo: React.FC<CardProps> = ({
                         }
                     >
                         {Object.entries(content).map(([key, item]) => (
+
                             <li
                                 key={key}
                                 className={
@@ -137,18 +125,19 @@ const CardInfo: React.FC<CardProps> = ({
                                 }
                             >
                                 <span>{item.icon}</span>
-                                {isValidUrl(item.info) ? (
+                                {["LinkedIn", "Github"].includes(key) ? (
                                     <Link
                                         href={item.info}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={cardStyles.link}
+
                                     >
                                         {key} ↗
                                     </Link>
-                                ) : (
-                                    <p>{item.info}</p>
-                                )}
+                                ) : (<div className={cardStyles.text}> {item.info} </div>)}
+
+
                             </li>
                         ))}
                     </ul>

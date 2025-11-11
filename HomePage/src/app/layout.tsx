@@ -1,35 +1,32 @@
-import type {Metadata} from "next";
-import {Geist} from "next/font/google";
+import type { Metadata } from "next";
+import { Geist } from "next/font/google";
 import "./styles/globals.css";
 import React from "react";
 import MyHeader from "@/app/header";
 
 const nunito = Geist({
-    weight: ['400', '500', '600', '700'],
-    subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
 });
 export const metadata: Metadata = {
-    title: "Julian's Portfolio",
-    description: "Created with NEXTJS",
+  title: "Julian's Portfolio",
+  description: "Created with NEXTJS",
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
+  children,
+}: Readonly<{
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang="en">
-        <body className={`${nunito.className}`}>
+  return (
+    <html lang="en">
+      <body className={`${nunito.className}`}>
         <header>
-            <MyHeader/>
+          <MyHeader />
         </header>
-        <main>
-            {children}
-        </main>
-        <footer>
-        </footer>
-        </body>
-        </html>
-    );
+        <main>{children}</main>
+        <footer></footer>
+      </body>
+    </html>
+  );
 }

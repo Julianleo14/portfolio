@@ -39,7 +39,7 @@ Each project is crafted with attention to clean code, performance, and user expe
 
 - **LinkedIn:** [www.linkedin.com/in/julian-leonardo-garcia](https://www.linkedin.com/in/julian-leonardo-garcia)
 - **Email:** leonardojl14g@gmail.com
-- **Location:** Cajicá, Colombia
+- **Location:** Bogotá, Colombia
 
 ---
 

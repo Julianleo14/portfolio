@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Apply ignores to subdirectories as well (covers HomePage and future projects)
+node_modules/
+.next/

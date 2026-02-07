@@ -29,9 +29,11 @@ Each project is crafted with attention to clean code, performance, and user expe
 
 ## 💼 Current Projects
 
-| Project                | Description                                | Main Technologies             |
+| Project                | Description                                | Main Technologies             | 
 | ---------------------- | ------------------------------------------ | ----------------------------- |
 | [HomePage](./HomePage) | Main portfolio website deployed on Vercel. | Next.js, TypeScript, MUI, CSS |
+
+- **Link:** [Portfolio deployed on Vercel ](https://portfolio-yol5.vercel.app/)
 
 ---
 
